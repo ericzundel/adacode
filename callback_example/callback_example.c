@@ -41,6 +41,7 @@ void test_list_walk() {
   
   /* cleanup the data created by this test */
   list_free(mylist_hnd, true);
+  free(mylist_hnd);
 }
 
 int main(int argc, char *argv[]) {
