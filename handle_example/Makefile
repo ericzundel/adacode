@@ -1,7 +1,7 @@
 # Variables used in the makefiles
 CC=gcc
 CFLAGS=-I. -v
-DEPS = llist.h # Put in your .h files here
+DEPS = list.h # Put in your .h files here
 
 
 # Compile a .c file into an object file for linking.  The object file is
@@ -14,22 +14,18 @@ DEPS = llist.h # Put in your .h files here
 
 # This is the default target. If you just type "make" it will run all of these
 # dependencies.
-all: tictactoe test_llist
+all:  handle_example
 
-# to compile the tictactoe binary, you need the main tictactoe code and the llist library
-tictactoe: tictactoe.o llist.o  
-	$(CC) -o tictactoe tictactoe.o llist.o
 
-# Unit test program for the llist library
-test_llist: llist.o test_llist.o
-	$(CC) -o test_llist test_llist.o llist.o
+#  test program for the list library
+handle_example: handle_example.o list.o
+	$(CC) -o handle_example list.o handle_example.o
 
 # clean targets are used to get rid of generated files
 clean-sh:	
 	# Unix shell style clean target
-	rm -f *.o *~ tictactoe test_llist
+	rm -f *.o *~ handle_example
 
 clean:
 	# DOS style clean target
 	del *.o *.exe
-
