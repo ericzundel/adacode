@@ -31,5 +31,5 @@ clean-sh:
 
 clean:
 	# DOS style clean target
-	del *.o *.exe
+	delete *.o *.exe
 
